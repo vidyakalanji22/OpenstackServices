@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html data-ng-app="studentRegister">
+	<head>
+		
+		<title>Registration</title>
+		<!-- Bootstrap CSS -->
+        <!-- Latest compiled and minified CSS -->
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" 
+        integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+        <!-- AngularJS script -->
+        <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <script src="../js/register.js"></script>
+        <link rel="stylesheet" href="../css/register.css">
+    </head>
+    <body>
+   <header>
+<nav>
+<h2 align="center"><i><b>Openstack Services</b></i></h2>
+</nav>
+</header>
+            <h3 align="center">User Registration</h3>
+        
+        <div data-ng-controller="registerController">
+        <div class="container">
+        
+        <div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+		    
+		
+		<img align="middle" src="../img/Register.png" class="img-responsive" alt="Responsive image">
+		     
+        	<div class="panel panel-default">
+        		<div class="panel-body">
+        			<form name="registerForm">
+        			    <strong>  <lable for="userName" class="class-label">Name:</lable></strong>
+        				<div class="row">
+        					<div class="col-md-12" style="padding-top:10px">
+        						<input type="text" ng-model="userName" class="form-control" id="userName" placeholder="User Name" required />
+        					</div>
+        				</div>
+        				
+        				<div class="row">
+        				    <div class="col-md-12" style="padding-top:10px">
+        				       <strong><lable for="email" class="control-lable">Email Address:</lable></strong>
+        				       <input type="text" ng-model="email" class="form-control" id="email" placeholder="Email Address" required />
+        				    </div>
+        				</div>
+        				
+        				<div class="row">
+        				    <div class="col-md-12" style="padding-top:10px">
+        				       <strong><lable for="password" class="control-lable">Password:</label></strong>
+        				       <input type="password" ng-model="password" class="form-control" id="password" placeholder="Enter your password" required />
+        				    </div> 
+        				</div>
+        				
+        				<div class="row">
+        				  <!--    <div class="col-md-2" style="padding-top:10px"> -->
+        				    <p align="center">
+        				       <button type="submit" style="margin-left:auto;margin-right:auto;display:block;margin-top:5%;margin-bottom:0%" 
+        				       ng-click='register()'class="btn btn-success">Register</button>
+        				       </p>
+        				   <!-- </div>   -->
+        				</div>
+        			
+        			</form>
+        		</div>
+        	</div>
+        </div>
+        </div>
+        </div>
+        </div>
+   
+    </body>
+</html>
+
+
+        			
+        		

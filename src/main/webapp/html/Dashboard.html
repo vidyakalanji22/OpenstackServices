@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title>DashBoard</title>
+<meta name="generator" content="Bootply" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/styles.css" rel="stylesheet">
+<style type="text/css">
+body, td, th {
+	color: #FFFBFB;
+}
+</style>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top "
+		style="background-color: #C13C3E">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><strong>CLOUD
+						METERING</strong></a>
+
+
+			</div>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+
+
+
+			</ul>
+		</div>
+		<!--/.nav-collapse -->
+
+	</div>
+
+
+
+	<div id="container" align="left"
+		style="min-width: 310px; height: 200px; max-width: 400px; margin: 0 auto">
+		</div>
+
+
+	<!-- /.container -->
+	<!-- script references -->
+
+	<script src="../js/bootstrap.min.js"></script>
+	<script>
+	$(document).ready(
+				function() {
+				var data;
+				$.ajax({
+					method: "GET",
+					url: "http://localhost:8880/ServiceApplication/rest/compute/outGoingMeter"
+				}) .done(function( dat ) {
+					data = dat;
+					displayChart(data);
+			});					
+	
+		});	
+		
+	function displayChart(data) {
+		$('#container').highcharts({
+			chart : {
+				plotBackgroundColor : null,
+				plotBorderWidth : null,
+				plotShadow : false,
+				type : 'pie'
+			},
+			title : {
+				text : 'STORAGE STATUS'
+			},
+			tooltip : {
+				pointFormat : '{series.name}: <b>{point.percentage:.1f}%</b>'
+			},
+			plotOptions : {
+				pie : {
+					allowPointSelect : true,
+					cursor : 'pointer',
+					dataLabels : {
+						enabled : true,
+						format : '<b>{point.name}</b>: {point.percentage:.1f} %',
+						style : {
+							color : (Highcharts.theme && Highcharts.theme.contrastTextColor)
+									|| 'black'
+						}
+					}
+				}
+			},
+			series : [ {
+				name : 'Bytes',
+				colorByPoint : true,
+				data : [ {
+					name : 'INCOMING',
+					y : (data.inComingByte)
+				}, {
+					name : 'OUTGOING',
+					y : data.outGoingByte
+				} ]
+			} ]
+
+		});
+	}
+	</script>
+</body>
+</html>

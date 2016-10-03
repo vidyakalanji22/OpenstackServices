@@ -1,0 +1,28 @@
+body {
+	margin :0;
+	background-color :white;
+}
+header {
+	background: #800080;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+
+header h2{
+	margin :0;
+	
+}
+
+h3 {
+	color : black;
+	
+}
+
+.container {
+	background-color : white;
+	
+}
+
+.panel-body {
+	background: #eee;
+}

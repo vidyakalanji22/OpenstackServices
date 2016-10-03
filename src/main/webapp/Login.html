@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-ng-app="loginApp">
+<head>
+<title>Login</title>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- AngularJS script -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+        <script src="https://code.angularjs.org/1.4.7/angular-route.js"></script>
+        <script src="https://code.angularjs.org/1.4.7/angular-cookies.js"></script> 
+       <script src="https://code.angularjs.org/1.4.7/angular-messages.js"></script>
+        <script src="js/login.js"></script>
+        <link rel="stylesheet" href="css/login.css" /> 
+<!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body data-ng-controller="loginController">
+<header>
+<nav>
+<h2 align="center"><i><b>Openstack Services</b></i></h2>
+</nav>
+</header>
+	<div class="container">
+		<p>
+			<br />
+		</p>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="page-header">
+							<h3>
+								<b>Login</b>
+							</h3>
+						</div>
+						<form name="loginForm">
+							<div class="form-group">
+								<label for="email1">User Name</label>
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">
+									<span class="glyphicon glyphicon-user"></span></span> 
+									<input type="text" name="userName" class="form-control" id="userName" placeholder="User Name" data-ng-model="userName" required>
+								<!-- 	 <div ng-messages="loginForm.userEmail.$error">
+  									<div ng-message="required" style="color:red"></div> 
+  									<div ng-message="email" style="color:red"></div> 
+								</div>
+ -->
+							</div>
+							<div class="form-group">
+								<label for="password1">Password</label>
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1"><span
+										class="glyphicon glyphicon-star"></span></span>
+										 <input	type="password" name="userPassword" class="form-control" id="password1" placeholder="Password" data-ng-model="password" required>
+										<!-- <div ng-messages="loginForm.userPassword.$error">
+  									<div ng-message="required"></div>  -->
+								</div>
+										
+								</div>
+							</div>
+							<!--<input type="button" class="btn btn-success" value="Register">
+							 <input type="button" class="btn btn-primary" value="Login" data-ng-click="login()"> -->
+							<button type="login" class="btn btn-success"
+								data-ng-click="register()">
+								<span class="glyphicon glyphicon-registration-mark"></span>Register
+							</button>
+							<button type="login" class="btn btn-primary"
+								data-ng-click="login()">
+								<span class="glyphicon glyphicon-lock"></span>Login
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

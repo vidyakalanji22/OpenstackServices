@@ -1,0 +1,46 @@
+
+body {
+	margin :0;
+	background-color :white;
+}
+header {
+	background: #800080;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+
+header h2{
+	margin :0;
+	
+}
+@CHARSET "ISO-8859-1";
+
+h3 {
+	color : black;
+	
+}
+
+.container {
+	background-color : white;
+	
+}
+
+.panel-body {
+background:#eee;
+
+}
+
+#tabNames ul li{
+	
+	
+	list-style:none;
+	position: relative;
+	float: left;
+	height:50%;
+	border-bottom-width: 0;
+	margin: 3px 3px 0px 3px;
+	padding: 5px 5px 0px 5px;
+	background-color: #eee;
+	color: #696969;
+
+}
